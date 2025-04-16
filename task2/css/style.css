@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.imgBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+.imgBackColor{
+    width: 700px;
+    height: 400px;
+    background-color: aqua;
+    background-size: cover;
+    background-position: center;
+    
+}
