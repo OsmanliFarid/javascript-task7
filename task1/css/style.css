@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.clock-boxs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.clock-box{
+    width: 600px;
+    height: 300px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    box-shadow: 10px 10px 30px rgb(0, 255, 17);
+    font-size: 90px;
+    border-radius: 30px;
+}
