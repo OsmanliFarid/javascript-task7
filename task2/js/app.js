@@ -7,14 +7,14 @@ const todos = [
     {id:2,todo:'ders getme',IsCompleted:false},
     {id:3,todo:'ders oxuma',IsCompleted:false},
 ]
-let updateBox = () =>{
-    localStorage.setItem("todosBox",JSON.stringify(todos))
-}
 
+let todos2 = []
 const todosBoxJson = localStorage.getItem("todosBox")
-
 const todosBox = JSON.parse(todosBoxJson)
 console.log(todosBox);
+
+
+
 
 
 
@@ -54,7 +54,7 @@ const deleteTodo = (id) =>{
             todosBox.splice(index,1)
         }
      })
-     updateBox()
+
      showTodos(todosBox)
 }
 const editTodo = (id) =>{
@@ -68,7 +68,7 @@ const editTodo = (id) =>{
             }
         }
     })
-    updateBox()
+
     showTodos(todosBox)
 }
 
@@ -80,11 +80,9 @@ addNewTodoForm.addEventListener('submit',(e) =>{
         IsCompleted:false,
     }
     todosBox.unshift(newTodo)
-    updateBox()
     showTodos(todosBox)
     NewTodoInp.value = ""
 })
 
 
 showTodos(todosBox)
-updateBox()
