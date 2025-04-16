@@ -8,10 +8,16 @@ const todos = [
     {id:3,todo:'ders oxuma',IsCompleted:false},
 ]
 
-let todos2 = []
-const todosBoxJson = localStorage.getItem("todosBox")
-const todosBox = JSON.parse(todosBoxJson)
-console.log(todosBox);
+
+const a1 = () =>{
+    localStorage.setItem("todosBox",JSON.stringify(todos))
+}
+a1()
+const todos2Json = localStorage.getItem("todosBox")
+const todos2 = JSON.parse(todos2Json)
+
+
+
 
 
 
@@ -40,25 +46,26 @@ const showTodos = (arr) =>{
 
 const setCompleted = (id) =>{
     
-    todosBox.map((item) =>{
+    todos2.map((item) =>{
         if(item.id == id){
             item.IsCompleted = !item.IsCompleted
         }
     })
-    showTodos(todosBox)
+    a1()
+    showTodos(todos2)
 }
 const deleteTodo = (id) =>{
      
-     todosBox.forEach((item,index) =>{
+     todos2.forEach((item,index) =>{
         if(item.id == id){
-            todosBox.splice(index,1)
+            todos2.splice(index,1)
         }
      })
-
-     showTodos(todosBox)
+     a1()
+     showTodos(todos2)
 }
 const editTodo = (id) =>{
-    todosBox.map((item) =>{
+    todos2.map((item) =>{
         if(item.id == id){
             const newTodo = prompt("deyisdirin0", item.todo)
             if(newTodo){
@@ -68,8 +75,8 @@ const editTodo = (id) =>{
             }
         }
     })
-
-    showTodos(todosBox)
+    a1()
+    showTodos(todos2)
 }
 
 addNewTodoForm.addEventListener('submit',(e) =>{
@@ -79,10 +86,11 @@ addNewTodoForm.addEventListener('submit',(e) =>{
         todo:NewTodoInp.value,
         IsCompleted:false,
     }
-    todosBox.unshift(newTodo)
-    showTodos(todosBox)
+    todos2.unshift(newTodo)
+    a1()
+    showTodos(todos2)
     NewTodoInp.value = ""
 })
 
 
-showTodos(todosBox)
+showTodos(todos2)
